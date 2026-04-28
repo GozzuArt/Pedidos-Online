@@ -1,110 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Pedidos</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+
+  <!-- CLAVE PARA CELULAR -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Köa Helados</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Pedidos de Helados</h1>
 
-        <!-- Cono Crocante -->
-        <div class="item">
-            <label for="cono">Cono Crocante</label>
-            <input type="number" id="cono" data-name="Cono Crocante" data-price="1000" value="0" min="0">
-        </div>
+<div id="app">
+  <h1>🍦KÖA</h1>
 
-        <!-- Cono Blanco -->
-        <div class="item">
-            <label for="cono-blanco">Cono Blanco</label>
-            <input type="number" id="cono-blanco" data-name="Cono Blanco" data-price="1200" value="0" min="0">
-        </div>
+  <h3 id="categoria-actual"></h3>
 
-        <!-- Pico Rico -->
-        <div class="item">
-            <label for="pico-rico">Pico Rico</label>
-            <input type="number" id="pico-rico" data-name="Pico Rico" data-price="300" value="0" min="0">
-        </div>
+  <!-- CATEGORÍAS -->
+  <div class="categorias">
+    <button onclick="cambiarCategoria('Helados')">🍦</button>
+    <button onclick="cambiarCategoria('Bebidas')">🥤</button>
+    <button onclick="cambiarCategoria('Almacen')">🛒</button>
+  </div>
 
-        <!-- Pico Rico Especial -->
-        <div class="item">
-            <label for="pico-rico-especial">Pico Rico Especial</label>
-            <input type="number" id="pico-rico-especial" data-name="Pico Rico Especial" data-price="300" value="0" min="0">
-        </div>
+  <!-- PRODUCTOS -->
+  <div id="pantalla-productos">
+    <div id="productos"></div>
+  </div>
 
-        <!-- Acapulco Agua -->
-        <div class="item">
-            <label>Acapulco Agua</label>
-            <div>
-                <label for="acapulco-agua-naranja-uva">Naranja y Uva</label>
-                <input type="number" id="acapulco-agua-naranja-uva" data-name="Acapulco Agua - Naranja y Uva" data-price="300" value="0" min="0">
-                <label for="acapulco-agua-uva-frutilla">Uva y Frutilla</label>
-                <input type="number" id="acapulco-agua-uva-frutilla" data-name="Acapulco Agua - Uva y Frutilla" data-price="300" value="0" min="0">
-            </div>
-        </div>
+  <!-- CARRITO -->
+  <div id="pantalla-carrito">
+    <h2>🛒 Pedido</h2>
 
-        <!-- Acapulco Crema -->
-        <div class="item">
-            <label>Acapulco Crema</label>
-            <div>
-                <label for="acapulco-crema-chocolate">Chocolate</label>
-                <input type="number" id="acapulco-crema-chocolate" data-name="Acapulco Crema - Chocolate" data-price="400" value="0" min="0">
-                <label for="acapulco-crema-vainilla">Vainilla</label>
-                <input type="number" id="acapulco-crema-vainilla" data-name="Acapulco Crema - Vainilla" data-price="400" value="0" min="0">
-            </div>
-        </div>
+    <button class="btn-secundario" onclick="vaciarCarrito()">Vaciar</button>
 
-        <!-- Bombon -->
-        <div class="item">
-            <label for="bombon">Bombón</label>
-            <input type="number" id="bombon" data-name="Bombón" data-price="500" value="0" min="0">
-        </div>
+    <ul id="carrito"></ul>
 
-        <!-- Sombrero -->
-        <div class="item">
-            <label for="sombrero">Sombrero</label>
-            <input type="number" id="sombrero" data-name="Sombrero" data-price="500" value="0" min="0">
-        </div>
+    <p id="carrito-vacio"></p>
 
-        <!-- Total -->
-        <div class="total">
-            Total: <span id="total">$0.00</span>
-        </div>
+    <h3 id="total">Total: $0</h3>
 
-        <!-- Método de entrega -->
-        <div class="item">
-            <label for="metodo-entrega">Método de Entrega</label>
-            <select id="metodo-entrega">
-                <option value="tienda">Retirar en tienda</option>
-                <option value="domicilio">Entrega a domicilio (+600)</option>
-            </select>
-        </div>
+    <button class="btn-principal" onclick="finalizarPedido()">
+      Finalizar pedido
+    </button>
+  </div>
+</div>
 
-        <!-- Nombre del cliente -->
-        <div class="item">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" placeholder="Ingresa tu nombre">
-        </div>
-
-        <!-- Dirección del cliente -->
-        <div class="item">
-            <label for="direccion">Dirección</label>
-            <input type="text" id="direccion" placeholder="Ingresa tu dirección">
-        </div>
-
-        <button id="orderButton">Realizar Pedido</button>
-
-        <!-- Sección "Sobre nosotros" -->
-        <div class="about">
-            <h2>Tranferencia</h2>
-            <p>Alias: <strong> NACHOFF.UALA </strong></p>
-            <p>Propietario: <strong>ALVAREZ KEVIN</strong></p>
-            <h3>Si paga con transferencia, envíe el comprobante al número de WhatsApp que aparecerá en su pedido.</h3>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
