@@ -1,0 +1,351 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+body {
+  font-family: system-ui, -apple-system, Arial;
+  background: #F8F7F5;
+  color: #222;
+}
+
+/* CONTENEDOR */
+#app {
+  max-width: 480px;
+  margin: auto;
+  padding: 15px;
+}
+
+/* TITULOS */
+h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #2b1a1f;
+  margin-bottom: 4px;
+}
+
+h2 {
+  text-align: center;
+  margin: 15px 0;
+}
+
+#categoria-actual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 18px;
+  padding: 8px 16px;
+  width: fit-content;
+  max-width: 100%;
+  background: #ffffff;
+  border: 1px solid #ece7e3;
+  border-radius: 999px;
+  color: #5f5559;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+/* BOTONES GENERALES */
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* BOTÓN PRINCIPAL */
+.btn-principal {
+  width: 100%;
+  background: #D9204C;
+  color: white;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* BOTÓN SECUNDARIO */
+.btn-secundario {
+  width: 100%;
+  background:#D9204C;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* CATEGORÍAS */
+.categorias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.categorias button {
+  font-size: 24px;
+  font-weight: 500;
+  background: white;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.categorias button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.categorias button:active {
+  transform: scale(0.95);
+}
+
+/* PRODUCTOS GRID */
+#productos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* TARJETA PRODUCTO */
+.producto {
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* IMAGEN 800x800 ADAPTADA */
+.img-producto {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 10px;
+}
+
+/* TEXTOS */
+.producto h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.descripcion {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 6px 0;
+  min-height: 32px;
+}
+
+.precio {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin: 8px 0;
+}
+
+/* SELECT */
+select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  margin: 5px 0;
+}
+
+/* BOTÓN AGREGAR */
+.producto button {
+  width: 100%;
+  background: #D9204C;
+  color: white;
+  font-weight: 700;
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.producto button:active,
+.btn-principal:active,
+.btn-secundario:active {
+  transform: scale(0.98);
+}
+/* CARRITO */
+ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+li {
+  background: white;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* BOTONES CANTIDAD */
+li button {
+  padding: 4px 8px;
+  margin: 3px;
+}
+
+/* TOTAL */
+#total {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.stock {
+  font-size: 13px;
+  margin: 6px 0;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.sin-stock {
+  color: #c62828;
+}
+
+.btn-agotado {
+  background: #999 !important;
+  cursor: not-allowed;
+}
+.stock {
+  font-size: 13px;
+  margin: 6px 0;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.sin-stock {
+  color: #c62828;
+}
+
+.btn-agotado {
+  background: #999 !important;
+  cursor: not-allowed;
+}
+/* CARRUSEL DE IMÁGENES */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Flechas sutiles */
+.carousel.tiene-variantes::before,
+.carousel.tiene-variantes::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 2;
+  backdrop-filter: blur(3px);
+}
+
+.carousel.tiene-variantes::before {
+  content: "‹";
+  left: 8px;
+}
+
+.carousel.tiene-variantes::after {
+  content: "›";
+  right: 8px;
+}
+/* INDICADORES DEL CARRUSEL */
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 6px 0 8px;
+}
+
+.punto {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d0d0d0;
+  transition: all 0.3s ease;
+}
+
+.punto.activo {
+  background: #704125;
+  transform: scale(1.25);
+}
+/* EFECTO TÁCTIL EN BOTONES */
+.producto button,
+.btn-principal,
+.btn-secundario {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.producto button:active,
+.btn-principal:active,
+.btn-secundario:active {
+  transform: scale(0.97);
+}
+
+.producto button:hover,
+.btn-principal:hover,
+.btn-secundario:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+/* COLORES DE STOCK */
+.stock {
+  font-weight: 600;
+  margin: 6px 0;
+}
+
+.stock-alto {
+  color: #2e7d32;
+}
+
+.stock-bajo {
+  color: #ef6c00;
+}
+
+.sin-stock {
+  color: #c62828;
+}
+/* MICROANIMACIÓN DE TARJETAS */
+.producto {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.producto:active {
+  transform: scale(0.98);
+}
