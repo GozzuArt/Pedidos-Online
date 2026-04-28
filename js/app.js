@@ -448,7 +448,7 @@ function finalizarPedido() {
   mensaje += `👤 Nombre: ${nombre}%0A`;
   mensaje += `📍 Dirección: ${direccion}`;
 
-  const telefono = '5491136093800';
+  const telefono = '5491138599611';
   const url = `https://wa.me/${telefono}?text=${mensaje}`;
 
   window.open(url, '_blank');
