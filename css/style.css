@@ -16,44 +16,24 @@ body {
 #app {
   max-width: 480px;
   margin: auto;
-  padding: 15px;
+  padding: 48px 15px 15px;
 }
 
 /* TITULOS */
 h1 {
   text-align: center;
   font-size: 28px;
-  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
   letter-spacing: -0.3px;
   color: #2b1a1f;
-  margin-bottom: 4px;
+  margin-bottom: 44px;
 }
 
 h2 {
   text-align: center;
   margin: 15px 0;
 }
-
-#categoria-actual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 18px;
-  padding: 8px 16px;
-  width: fit-content;
-  max-width: 100%;
-  background: #ffffff;
-  border: 1px solid #ece7e3;
-  border-radius: 999px;
-  color: #5f5559;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  line-height: 1.4;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
 
 /* BOTONES GENERALES */
 button {
@@ -89,7 +69,7 @@ button {
   justify-content: center;
   align-items: center;
   gap: 14px;
-  margin: 18px 0;
+  margin: 0 0 18px;
 }
 
 .categorias button {
@@ -348,4 +328,52 @@ li button {
 
 .producto:active {
   transform: scale(0.98);
+}
+.datos-cliente {
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.datos-cliente input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.opciones-entrega {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.opciones-entrega label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #333;
+}
+
+.opciones-entrega input[type="radio"] {
+  transform: scale(1.2);
+  accent-color: #F28A2E;
+}
+
+#contenedorDireccion {
+  margin-top: 10px;
 }
