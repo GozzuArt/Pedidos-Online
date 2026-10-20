@@ -155,8 +155,6 @@ function mostrarProductos() {
   const contenedor = document.getElementById("productos");
   contenedor.innerHTML = "";
 
-  document.getElementById("categoria-actual").textContent = `Estás viendo: ${categoriaActual}`;
-
   const filtrados = productos.filter(p => p.categoria === categoriaActual);
 
   filtrados.forEach((producto, index) => {
@@ -426,11 +424,25 @@ function finalizarPedido() {
     return;
   }
 
-  const nombre = prompt('Tu nombre:');
-  const direccion = prompt('Dirección de entrega:');
+  const nombre = document.getElementById('nombreCliente').value.trim();
+  const tipoEntrega = document.querySelector('input[name="tipoEntrega"]:checked');
+  const direccionInput = document.getElementById('direccionCliente');
 
-  if (!nombre || !direccion) {
-    alert('Debes completar tus datos');
+  if (!nombre) {
+    alert('Por favor, ingresá tu nombre');
+    return;
+  }
+
+  if (!tipoEntrega) {
+    alert('Seleccioná una opción de entrega');
+    return;
+  }
+
+  const metodo = tipoEntrega.value;
+  const direccion = direccionInput.value.trim();
+
+  if (metodo === 'delivery' && !direccion) {
+    alert('Por favor, ingresá la dirección de entrega');
     return;
   }
 
@@ -446,7 +458,11 @@ function finalizarPedido() {
 
   mensaje += `%0ATotal: $${total}%0A%0A`;
   mensaje += `👤 Nombre: ${nombre}%0A`;
-  mensaje += `📍 Dirección: ${direccion}`;
+  mensaje += `🚚 Entrega: ${metodo === 'delivery' ? 'Delivery' : 'Retiro en local'}%0A`;
+
+  if (metodo === 'delivery') {
+    mensaje += `📍 Dirección: ${direccion}%0A`;
+  }
 
   const telefono = '5491138599611';
   const url = `https://wa.me/${telefono}?text=${mensaje}`;
