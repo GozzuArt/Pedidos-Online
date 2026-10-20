@@ -8,13 +8,15 @@
 
   <title>Köa Helados</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div id="app">
-  <h1>🍦KÖA</h1>
-
-  <h3 id="categoria-actual"></h3>
+  <h1>KÖA</h1>
 
   <!-- CATEGORÍAS -->
   <div class="categorias">
@@ -27,6 +29,38 @@
   <div id="pantalla-productos">
     <div id="productos"></div>
   </div>
+
+  <div class="datos-cliente">
+  <input
+    type="text"
+    id="nombreCliente"
+    placeholder="Tu nombre"
+    required
+  >
+
+  <div class="opciones-entrega">
+    <label>
+      <input
+        type="radio"
+        name="tipoEntrega"
+        value="retiro"
+        onchange="toggleDireccion()"
+      >
+      Retiro en local
+    </label>
+
+
+
+  </div>
+
+  <div id="contenedorDireccion" style="display: none;">
+    <input
+      type="text"
+      id="direccionCliente"
+      placeholder="Dirección de entrega"
+    >
+  </div>
+</div>
 
   <!-- CARRITO -->
   <div id="pantalla-carrito">
@@ -41,6 +75,8 @@
     <h3 id="total">Total: $0</h3>
 
     <button class="btn-principal" onclick="finalizarPedido()">
+
+      
       Finalizar pedido
     </button>
   </div>
